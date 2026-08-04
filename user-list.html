@@ -1,0 +1,33 @@
+<h1 class = "text-4xl text-center text-cyan-500" >User List</h1>
+
+<ul>
+    @for(user of userdata(); track user.id){
+    <div class="ul-style max-w-lg shadow-md rounded-lg px-8 p-10 m-10  bg-white">
+        <ul class="space-y-lg text-gray-800">
+            <li class="flex justify-between"> 
+                <span>Id :</span>
+                <span>{{user.id}}</span>
+            </li>
+            <li class="flex justify-between">
+                <span>Name :</span>
+                <span>{{user.name | uppercase}}</span>
+            </li>
+            <li class="flex justify-between">
+                <span>Age :</span>
+                <span>{{user.age}}</span>
+            </li>
+            <li class="flex justify-between">
+                <span>Email :</span>
+                <span>{{user.email}}</span>
+            </li>
+        </ul>
+
+        <div>
+            <button class = " bg-red-500 text-white px-4 py-2 m-1.5 rounded cursor-pointer" (click)="deleteuserdata(user.id)">Delete</button>
+            <button class = " bg-blue-500 text-white px-4 py-2 m-1.5 rounded cursor-pointer" (click)="edituser(user.id)">Edit</button>
+        </div>
+    </div>
+
+    }
+
+</ul>

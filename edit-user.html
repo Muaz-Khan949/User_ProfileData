@@ -1,0 +1,32 @@
+<div class="ul-style max-w-lg shadow-md rounded-lg px-8 p-10 m-10  bg-white">
+    <h1 class=" text-4xl text-left mb-6 font-bold text-gray-800">Edit User</h1>
+
+
+    <input class="w-full border border-gray-300 rounded shadow-md px-3 py-2 mb-4" type="text" name="name" placeholder="Enter Name" [formControl]="name">
+    @if(name?.hasError('required') && name?.touched) {
+        <span class="error">Name is required</span>
+    }
+
+    <br><br>
+
+    <input class="w-full border border-gray-300 rounded shadow-md px-3 py-2 mb-4" type="email" name="email" placeholder="Enter Email"  [formControl]="email">
+    @if(email?.hasError('required') && email?.touched) {
+        <span class="error">Email is required</span>
+    }
+    @if(email?.hasError('email') && email?.touched) {
+        <span class="error">Please enter a valid email</span>
+    }
+
+
+    <br><br>
+    <input class="w-full border border-gray-300 rounded shadow-md px-3 py-2 mb-4" type="number" name="age" placeholder="Enter Age" [formControl]="age">
+    @if(age?.hasError('required') && age?.touched) {
+        <span class="error">Age is required</span>
+    }
+    @if(age?.hasError('min') && age?.touched) {
+        <span class="error">Age must be a positive number</span>
+    }
+    <br><br>
+
+    <button class = " bg-red-500 text-white px-4 py-2 m-1.5 rounded cursor-pointer hover:bg-amber-600 " (click)="edituser()" type="submit">Edit User</button>
+</div>

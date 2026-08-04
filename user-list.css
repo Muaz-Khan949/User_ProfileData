@@ -1,0 +1,7 @@
+.ul-style{
+    border-bottom: 3px solid #ccc;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
